@@ -98,7 +98,7 @@ ILYT_Pheno <- ILYT_Pheno_w |>
   droplevels()
 
 ILSI_Pheno_w <- 
-  read.csv('Data/ILSI_22-23-2025.06.12.csv') |> # Load raw data in csv format.
+  read.csv('Data/ILSI_22-24-2025.07.21.csv') |> # Load raw data in csv format.
   remove_empty(which = c('cols')) |> # Remove empty columns.
   clean_names() |> # Clean names.
   # Select relevant variables.

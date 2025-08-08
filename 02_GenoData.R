@@ -17,6 +17,7 @@ IL.MT_Pheno <- readRDS('Data/IL.MT_Pheno.rds')
 
 # Vector of genotypes with phenotypic data
 genotypes <- IL_Pheno |>
+  filter(Stage=='YT') |>
   filter(!is.na(Pheno)) |>
   ungroup()  |>
   droplevels() |>
@@ -105,6 +106,7 @@ IL.MT_Pheno <- IL.MT_Pheno |>
   ) |>
   glimpse()
 
+saveRDS(genoM_filter$M.clean, file = 'Data/Markers.rds')
 saveRDS(IL_Pheno, file = 'Data/IL_Pheno.rds')
 saveRDS(IL.MT_Pheno, file = 'Data/IL.MT_Pheno.rds')
 saveRDS(Ginv, file = 'Data/Ginv.rds')
